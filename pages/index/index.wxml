@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<include src='header.wxml' />
+<view class="container">
+  <view bindtap='tapTest' id='item-{{text}}' wx:if="{{text=='text'}}">if</view>
+  <view wx:else>else</view>
+  <button bindtap='changeText'>change normal data</button>
+  <template is="staffName" data="{{...name[0]}}"></template>
+  <template is="staffName" data="{{...name[1]}}"></template>
+  <template is="staffName" data="{{...name[2]}}"></template>
+</view>
+<block wx:for="{{name}}" wx:key="index" style="display: block;">
+  第{{index+1}}位姓:{{item.lastName}}，名:{{item.firstName}}
+</block>
+<button bindtap="changeName">change name</button>
+<template name="staffName">
+  <view>
+    firstName:{{firstName}},
+    LastName:{{lastName}}
+  </view>
+</template>
