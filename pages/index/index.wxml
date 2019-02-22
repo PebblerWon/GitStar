@@ -1,20 +1,38 @@
-<!--index.wxml-->
-<include src='header.wxml' />
-<view class="container">
-  <view bindtap='tapTest' id='item-{{text}}' wx:if="{{text=='text'}}">if</view>
-  <view wx:else>else</view>
-  <button bindtap='changeText'>change normal data</button>
-  <template is="staffName" data="{{...name[0]}}"></template>
-  <template is="staffName" data="{{...name[1]}}"></template>
-  <template is="staffName" data="{{...name[2]}}"></template>
-</view>
-<block wx:for="{{name}}" wx:key="index" style="display: block;">
-  第{{index+1}}位姓:{{item.lastName}}，名:{{item.firstName}}
-</block>
-<button bindtap="changeName">change name</button>
-<template name="staffName">
-  <view>
-    firstName:{{firstName}},
-    LastName:{{lastName}}
+<view class="section" >
+  <view id='loadingShadow' class='{{loading?"show":"hide"}}'></view>
+  <view class='content'>
+    <view class='left'>
+      <view class="lanTitle">Languages</view>
+      <block wx:for="{{languages}}" wx:key="name" class="lanList">
+        <view class='{{curLan==item.value?"lanItem targeted":"lanItem"}}'  data-value='{{item.value}}' catchtap='tabClick'>{{item.name}}</view>
+      </block>
+    </view>
+    <scroll-view 
+      class='right' 
+      scroll-with-animation="{{true}}"
+      scroll-y style='height:{{screenInfo.h}}'
+    >
+      <block wx:for="{{repos}}" wx:key="id">
+        <view class="repoItem" data-value='{{item.id}}' catchtap='itemClick'>
+          <view class="repoItemName">{{item.name}}</view>
+          <text class="repoItemDesc">{{item.description}}</text>
+          <view class="repoItemTag">
+            <label class='{{item.language==""?"hide":"show"}}'>
+              <label class='{{"repoItemLan "+(item.language=="C++"?"C__":item.language)}}'> </label>
+              <text class='repoItemLanTex'>{{item.language}}</text>
+            </label>
+            <label class='repoItemStar'>
+              <label class='repoItemStarImg'></label>
+              <label>{{item.stargazers_count}}</label>
+            </label>
+          </view>
+        </view>
+      </block>
+      <view class='repoItem' catchtap='moreItemTap'>
+        <text class='repoItemMore'>More</text>
+      </view>
+    </scroll-view>
   </view>
-</template>
+</view>
+
+

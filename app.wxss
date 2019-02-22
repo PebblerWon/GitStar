@@ -8,3 +8,28 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+.hide{
+  visibility:hidden;
+}
+.show{
+  visibility:visible;
+}
+/* pages/detail/detail.wxss */
+#loadingShadow{
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
+  background-color: #eee;
+  opacity: 0.8;
+  z-index: 1;
+}
+#loadingShadow::after{
+  content: "";
+  display: block;
+  width:100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+  top:40%;
+  background:url(https://pebbler.wang/public/loading.gif) center no-repeat ;
+}

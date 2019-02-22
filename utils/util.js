@@ -14,6 +14,18 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const formatStar=(num)=>{
+  let res
+  if(num>100000)//>10w
+    res = (num/1000).toFixed(0)+"k"
+  else if(num>10000)// >1w
+    res = (num/1000).toFixed(1)+"k"
+  else if(num>1000)
+    res = (num/1000).toFixed(1)+"k"
+  return res
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatStar:formatStar
 }

@@ -1,0 +1,6 @@
+.test{
+  padding: 0px 5px;
+}
+.test p{
+  color:red !important;
+}

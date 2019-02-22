@@ -1,12 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/detail/detail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#0f0",
     "navigationBarTitleText": "GitStar",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance":1
   }
 }

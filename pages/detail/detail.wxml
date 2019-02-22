@@ -1,0 +1,3 @@
+<!--pages/detail/detail.wxml-->
+<view id='loadingShadow' class='{{loading?"show":"hide"}}'></view>
+<rich-text nodes="{{nodes}}" class='richText'></rich-text>

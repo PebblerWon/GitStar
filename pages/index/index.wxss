@@ -1,21 +1,101 @@
-/**index.wxss**/
-.userinfo {
+.section{
+  height: 100%;
+  position: relative;
+}
+
+.content{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100%;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.left{
+  width:27vw;
+  border: 1px solid #e1e4e8;
+  border-radius: 5px;
+  padding:8px;
+  height: 100%;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.right{
+  width:73vw;
+  height: 100vh;
 }
-
-.usermotto {
-  margin-top: 200px;
+.lanTitle{
+  color:#24292e;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.lanItem{
+  padding:4px 0px 4px 10px;
+  font-size: 12px;
+  margin: 0 0 10px;
+  border-bottom: 1px solid #eee;
+}
+.lanItem:last-child{
+  border-bottom: none;
+}
+.targeted{
+  background-color: #eaecef;
+}
+.lanItem:hover{
+  background-color: #eaecef;
+}
+.right{
+  flex: auto;
+}
+.repoItem{
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  padding:12px 5px;
+  margin:0px 5px;
+}
+.repoItemName{
+  color: #0366d6;
+  font-size: 18px;
+  font-weight: 600;
+}
+.repoItemDesc{
+  font-size: 14px;
+  height:30px;
+  word-break:break-all;
+  word-wrap: break-word;
+}
+.repoItemTag{padding-top: 3px;}
+.repoItemLan{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+}
+.JavaScript{background-color:#f1e05a; }
+.Java{background-color:#b07219; }
+.Python{background-color:#3572A5; }
+.Objective-C{background-color:#438eff; }
+.Go{background-color:#375eab; }
+.Ruby{background-color:#701516; }
+.C__{background-color:#f34b7d; }
+.PHP{background-color:#4F5D95; }
+.C{background-color:#555555; }
+.Swift{background-color:#ffac45; }
+.CSS{background-color:#563d7c;}
+.Shell{background-color:#89e051;}
+.TypeScript{background-color: #2b7489;}
+.repoItemLanTex{
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+.repoItemStar{
+  float:right;
+  font-size: 14px;
+}
+.repoItemStar>.repoItemStarImg{
+  display: inline-block;
+  width:14px;
+  height: 14px;
+  background-size: 100% 100%;
+  background-image: url(https://pebbler.wang/public/star.png)
+}
+.repoItemMore{
+  color: #0366d6;
+  padding-left: 15px;
 }

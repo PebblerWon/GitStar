@@ -1,9 +1,19 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
+    //获取系统屏幕信息
+    wx.getSystemInfo({
+      success: function(res) {
+        this.globalData.sysInfo = res
+        //console.log(res)
+      }.bind(this)
+    })
     // 展示本地存储能力
+    wx.setStorageSync('logs', [])
     var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
+    
+    //将打开小程序的场景录入日志
+    logs.unshift(options.scene)
     wx.setStorageSync('logs', logs)
 
     // 登录
@@ -34,6 +44,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    serverUrl:'https://pebbler.wang',
+    sysInfo:null,
+    defaultWindowWidth:320,
+    defaultWindowHeight:504
   }
 })

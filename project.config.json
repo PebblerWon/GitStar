@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
+	"libVersion": "2.0.4",
 	"appid": "wx6a1cb761523e0846",
 	"projectname": "GitStar",
 	"isGameTourist": false,
